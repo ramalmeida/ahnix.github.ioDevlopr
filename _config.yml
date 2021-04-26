@@ -28,7 +28,7 @@ typewrite-text: Ahnix is Built For Developers, which is optimized for speed and 
 
 # Experiences
 author_work_experiences:
-            - company_name: Expplicae
+            - company_name: Explicae
               company_logo: explicae.png
               company_url: https://explicae.com.br
               designation: Back-End Developer
@@ -43,7 +43,7 @@ author_work_experiences:
 
 # Education
 author_education_details:
-              - college_logo: mit.png
+              - college_logo: estacio.png
                 college_name: UNESA
                 college_url: https://estacio.br
                 college_degree: Software Engineer
