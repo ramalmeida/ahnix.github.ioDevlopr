@@ -1,0 +1,132 @@
+<!DOCTYPE html> <html lang=" en "><head> <meta charset="utf-8" /> <title> Express imdb movies -Ahnix </title> <meta http-equip="X-UA-Compatible" content="IE=edge" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <meta name="keywords" content="Express imdb movies, Ahnix, ,"/> <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" /> <meta content="" property="fb:app_id" /> <meta content="Ahnix" property="og:site_name" /> <meta content="Express imdb movies" property="og:title" /> <meta content="article" property="og:type" /> <meta content="Ahnix is Built For Developers, which is optimized for speed and readability." property="og:description" /> <meta content="https://ahnix.github.io/2020/12/07/movies/" property="og:url" /> <meta content="2020-12-07T22:30:02+00:00" property="article:published_time" /> <meta content="https://ahnix.github.io/about/" property="article:author" /> <meta content="macbook" property="article:tag" /> <meta content="nodejs" property="article:tag" /> <meta content="express" property="article:tag" /> <!-- Twitter Cards --> <meta name="twitter:card" content="summary" /> <meta name="twitter:site" content="@" /> <meta name="twitter:creator" content="@" /> <meta name="twitter:title" content="Express imdb movies" /> <meta name="twitter:url" content="https://ahnix.github.io/2020/12/07/movies/" /> <meta name="twitter:description" content="Ahnix is Built For Developers, which is optimized for speed and readability." /> <link rel="stylesheet" href="https://ahnix.github.io/assets/css/main.css" /> <!-- <link rel="stylesheet" href="https://ahnix.github.io/assets/css/custom-style.css" /> --> <link rel="stylesheet" href="https://ahnix.github.io/assets/bower_components/lightgallery/dist/css/lightgallery.min.css" /> <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.0-beta.3/default/snipcart.css" /> <link rel="stylesheet" href="https://ahnix.github.io/assets/bower_components/bootstrap/dist/css/bootstrap.min.css" /> <link rel="stylesheet" href="https://ahnix.github.io/assets/bower_components/font-awesome/web-fonts-with-css/css/fontawesome-all.min.css" /> <link rel="stylesheet" href="https://ahnix.github.io/assets/bower_components/icono/dist/icono.min.css" /> <!-- Fonts--> <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet" /> <!-- Favicon --> <link rel="icon" href="https://ahnix.github.io/assets/img/favicon.ico" type="image/gif" sizes="16x16" /> <script> var base_url = 'https://ahnix.github.io' ; </script> <!-- Jquery --> <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous" ></script> <!-- <script src="https://ahnix.github.io/assets/bower_components/jquery/dist/jquery.min.js"></script> --> <script src="https://ahnix.github.io/assets/bower_components/jquery.easing/jquery.easing.min.js"></script> <script src="https://ahnix.github.io/assets/bower_components/bootstrap/dist/js/bootstrap.bundle.min.js"></script> <script src="https://ahnix.github.io/assets/bower_components/jquery-mousewheel/jquery.mousewheel.min.js"></script> <script src="https://ahnix.github.io/assets/bower_components/ghosthunter/dist/jquery.ghostHunter.min.js"></script> <script src="https://ahnix.github.io/assets/bower_components/lightgallery/dist/js/lightgallery-all.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js"></script> <script src="https://ahnix.github.io/assets/bower_components/imagesloaded/imagesloaded.pkgd.min.js"></script> <script src="https://ahnix.github.io/assets/bower_components/nanobar/nanobar.min.js"></script> <script src="https://ahnix.github.io/assets/bower_components/typewrite/dist/typewrite.min.js"></script> <script src="https://ahnix.github.io/assets/js/search.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script> <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> <!-- for Mathjax support --> <!-- Github Button --> <script async defer src="https://buttons.github.io/buttons.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous" ></script> <!-- (you can remove the below scripts but do buy me a coffee to show some support :) --> <!-- Maker widget --> <script> (function(d, h, m) { var js, fjs = d.getElementsByTagName(h)[0]; if (d.getElementById(m)) { return; } js = d.createElement(h); js.id = m; js.onload = function() { window.makerWidgetComInit({ position: "left", widget: "ofeeof264otl2l5g-zspk40eq2gaomj2n-higi2qphmveubksi" }); }; js.src = "https://makerwidget.com/js/embed.js"; fjs.parentNode.insertBefore(js, fjs); })(document, "script", "dhm"); </script> <!-- buy me a coffeee --> <script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="sujaykundu" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FF813F" data-position="right" data-x_margin="10" data-y_margin="10" ></script> <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--> <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]--> <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]--> <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]--> </head> <body> <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="topNav"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" > <span class="icono-hamburger" id="navbar-hamburger"> </span> </button> <a class="navbar-brand" href="/">Ahnix</a> <div class="collapse navbar-collapse" id="navbarNav"> <ul class="navbar-nav"> <li class="nav-item"> <a class="nav-link" href="https://ahnix.github.io/" >Home</a > </li> <li class="nav-item"> <a class="nav-link" href="https://ahnix.github.io/about" >About</a > </li> <li class="nav-item"> <a class="nav-link" href="https://ahnix.github.io/blog" >Blog</a > </li> <li class="nav-item"> <a class="nav-link" href="https://ahnix.github.io/contact" >Contact</a > </li> </ul> </div> <ul class="nav justify-content-end"> <li class="nav-item"> <a class="nav-link toggle-search-button" href="#search"> <i class="fa fa-search search-icon" aria-hidden="true"></i> </a> </li> <li class="nav-item"> <input class="nav-link switch" id="theme-toggle" onclick="modeSwitcher() " type="checkbox" name="checkbox" /> </li> </ul> </nav> <!-- Search Form --> <div class="search-form-container"> <form class="search-form"> <fieldset class="search-form__fieldset"> <div class="row"> <div class="col-lg-8 offset-md-2"> <input class="search-form__field" placeholder="Type to Search..." autofocus> <input class="search-form__submit" type="submit" value="search"> </div> </div> </fieldset> </form> <div class="row"> <div class="col-lg-8 offset-md-2 search-results"> <div class="card search-results"></div> </div> </div> <div class="close-search-button search-form-container__close"> <i class="fa fa-times icon"></i> </div> </div><div class="col-lg-12"> <div class="row" id="blog-post-container"> <div class="col-lg-8 offset-md-2"><article class="card" itemscope itemtype="http://schema.org/BlogPosting"> <div class="card-header"> <h1 class="post-title" itemprop="name headline">Express imdb movies</h1> <h4 class="post-meta"></h4> <p class="post-summary"> Posted by : at <time datetime="2020-12-07 22:30:02 +0000" itemprop="datePublished" >Dec 7, 2020</time > </p> <span class="disqus-comment-count" data-disqus-identifier="/2020/12/07/movies/" ></span> <div class="post-categories"> Category : </div> </div> <div class="card-body" itemprop="articleBody"> <img class="card-img-top" src="https://ahnix.github.io" alt="" /> <br /> <br /> <p><img src="/assets/img/nodejsexpress.png" style="width: 286px; height: 180px;" /></p> <h2 id="link---repositorio">link -&gt; repositorio</h2> <p>https://github.com/Ahnix/movies</p> <p> comentando o code</p> <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="s1">'use strict'</span>
+
+// import lib express e complementares para ser usada
+const express <span class="o">=</span> require<span class="o">(</span><span class="s1">'express'</span><span class="o">)</span>
+const request <span class="o">=</span> require<span class="o">(</span><span class="s1">'request'</span><span class="o">)</span>
+const path <span class="o">=</span> require<span class="o">(</span><span class="s1">'path'</span><span class="o">)</span>
+
+// onde esta escrito suakey troque obviamente pela key gerada <span class="k">do </span>imdb para uso da api
+const tmdbApiKey <span class="o">=</span> suakey
+
+
+// pegando o trending top filmes <span class="k">do </span>dia
+const optionsTrending <span class="o">=</span> <span class="o">{</span>
+  method: <span class="s1">'GET'</span>,
+  url: <span class="s1">'https://api.themoviedb.org/3/trending/movie/day'</span>,
+  qs: <span class="o">{</span>
+    api_key: tmdbApiKey,
+
+  <span class="o">}</span>
+<span class="o">}</span>
+
+// pegando o top rank de filmes
+const optionsTopRatedRecommended <span class="o">=</span> <span class="o">{</span>
+  method: <span class="s1">'GET'</span>,
+  url: <span class="s1">'https://api.themoviedb.org/3/movie/top_rated'</span>,
+  qs: <span class="o">{</span>
+    api_key: tmdbApiKey,
+    region: <span class="s1">'gb'</span>,
+
+  <span class="o">}</span>
+<span class="o">}</span>
+
+// pegando detalhes <span class="k">do </span>filme 
+const optionsMovieDetails <span class="o">=</span> <span class="o">{</span>
+  method: <span class="s1">'GET'</span>,
+  url: undefined,
+  qs: <span class="o">{</span>
+    api_key: tmdbApiKey,
+    append_to_response: <span class="s1">'videos,credits'</span>,
+
+  <span class="o">}</span>
+<span class="o">}</span>
+
+// autocompelte para um campo de pesquisa
+const optionsMovieAutocomplete <span class="o">=</span> <span class="o">{</span>
+  method: <span class="s1">'GET'</span>,
+  url: <span class="s1">'https://api.themoviedb.org/3/search/movie'</span>,
+  qs: <span class="o">{</span>
+    api_key: tmdbApiKey,
+    query: undefined,
+
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nb">let </span>parsedResult
+
+tmdbApiKey
+  ?
+  console.log<span class="o">(</span><span class="s1">'TMDb api key is found'</span><span class="o">)</span> :
+  console.log<span class="o">(</span><span class="s1">'TMDb api key is NOT found among environment variables!'</span><span class="o">)</span>
+
+async <span class="k">function </span>apiCall<span class="o">(</span>options<span class="o">)</span> <span class="o">{</span>
+  // <span class="o">(</span>I.<span class="o">)</span> promise to <span class="k">return </span>the parsedResult <span class="k">for </span>processing
+  <span class="k">function </span>tmdbRequest<span class="o">()</span> <span class="o">{</span>
+    <span class="k">return </span>new Promise<span class="o">(</span><span class="k">function</span> <span class="o">(</span>resolve, reject<span class="o">)</span> <span class="o">{</span>
+      request<span class="o">(</span>options, <span class="k">function</span> <span class="o">(</span>error, response, body<span class="o">)</span> <span class="o">{</span>
+        try <span class="o">{</span>
+          resolve<span class="o">(</span>JSON.parse<span class="o">(</span>body<span class="o">))</span>
+        <span class="o">}</span> catch <span class="o">(</span>e<span class="o">)</span> <span class="o">{</span>
+          reject<span class="o">(</span>e<span class="o">)</span>
+        <span class="o">}</span>
+      <span class="o">})</span>
+    <span class="o">})</span>
+  <span class="o">}</span>
+
+  // <span class="o">(</span>II.<span class="o">)</span>
+  try <span class="o">{</span>
+    parsedResult <span class="o">=</span> await tmdbRequest<span class="o">()</span>
+  <span class="o">}</span> catch <span class="o">(</span>e<span class="o">)</span> <span class="o">{</span>
+    console.error<span class="o">(</span>e<span class="o">)</span>
+  <span class="o">}</span>
+  <span class="k">return </span>parsedResult
+<span class="o">}</span>
+
+// subindo api -&gt; localhost:5000
+<span class="k">function </span>endpointCreation<span class="o">()</span> <span class="o">{</span>
+  try <span class="o">{</span>
+    const app <span class="o">=</span> express<span class="o">()</span>
+    const port <span class="o">=</span> process.env.PORT <span class="o">||</span> 5000
+
+    app.use<span class="o">(</span>express.static<span class="o">(</span>path.join<span class="o">(</span>__dirname, <span class="s1">'client/build'</span><span class="o">)))</span>
+    // required to serve SPA on heroku production without routing problems<span class="p">;</span> it will skip only <span class="s1">'api'</span> calls
+    <span class="k">if</span> <span class="o">(</span>process.env.NODE_ENV <span class="o">===</span> <span class="s1">'production'</span><span class="o">)</span> <span class="o">{</span>
+      app.get<span class="o">(</span>/^<span class="o">((</span>?!<span class="o">(</span>api<span class="o">))</span>.<span class="o">)</span><span class="k">*</span><span class="nv">$/</span>, <span class="k">function</span> <span class="o">(</span>req, res<span class="o">)</span> <span class="o">{</span>
+        res.sendFile<span class="o">(</span>path.join<span class="o">(</span>__dirname, <span class="s1">'client/build'</span>, <span class="s1">'index.html'</span><span class="o">))</span>
+      <span class="o">})</span>
+    <span class="o">}</span>
+
+    // endpoint para top ranked dos filmes
+    app.get<span class="o">(</span><span class="s1">'/api/topRatedRecommended'</span>, async <span class="o">(</span>req, res<span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span>
+      const topRatedResponse <span class="o">=</span> await apiCall<span class="o">(</span>optionsTopRatedRecommended<span class="o">)</span>
+      const randomIndex <span class="o">=</span> Math.floor<span class="o">(</span>Math.random<span class="o">()</span> <span class="k">*</span> Math.floor<span class="o">(</span>20<span class="o">))</span>
+      const topRatedRandomMovie <span class="o">=</span> topRatedResponse.results[randomIndex]
+      res.json<span class="o">(</span>topRatedRandomMovie<span class="o">)</span>
+      console.log<span class="o">(</span><span class="sb">`</span>/api/topRatedRecommended endpoint has been called!<span class="sb">`</span><span class="o">)</span>
+    <span class="o">})</span>
+
+    // endpoint para detalhe <span class="k">do </span>filme
+    app.get<span class="o">(</span><span class="s1">'/api/movieDetails/:tmdbId'</span>, async <span class="o">(</span>req, res<span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span>
+      const <span class="nb">id</span> <span class="o">=</span> req.params.tmdbId
+      optionsMovieDetails.url <span class="o">=</span> <span class="sb">`</span>https://api.themoviedb.org/3/movie/<span class="k">${</span><span class="nv">id</span><span class="k">}</span><span class="sb">`</span>
+      res.json<span class="o">(</span>await apiCall<span class="o">(</span>optionsMovieDetails<span class="o">))</span>
+      console.log<span class="o">(</span><span class="sb">`</span>/api/movieDetails/<span class="k">${</span><span class="nv">id</span><span class="k">}</span> endpoint has been called!<span class="sb">`</span><span class="o">)</span>
+    <span class="o">})</span>
+
+    // endpoint autocompletando nome filme
+    app.get<span class="o">(</span><span class="s1">'/api/movieAutocomplete'</span>, async <span class="o">(</span>req, res<span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span>
+      const query <span class="o">=</span> req.query.q
+      optionsMovieAutocomplete.qs.query <span class="o">=</span> query
+      res.json<span class="o">(</span>await apiCall<span class="o">(</span>optionsMovieAutocomplete<span class="o">))</span>
+      console.log<span class="o">(</span><span class="sb">`</span>/api/movieAutocomplete?q<span class="o">=</span><span class="k">${</span><span class="nv">query</span><span class="k">}</span> endpoint has been called!<span class="sb">`</span><span class="o">)</span>
+    <span class="o">})</span>
+
+    // fazendo api ouvir a porta 5000
+    app.listen<span class="o">(</span>port<span class="o">)</span>
+
+    console.log<span class="o">(</span><span class="sb">`</span>API is listening on <span class="k">${</span><span class="nv">port</span><span class="k">}</span><span class="sb">`</span><span class="o">)</span>
+  <span class="o">}</span> catch <span class="o">(</span>e<span class="o">)</span> <span class="o">{</span>
+    console.error<span class="o">(</span>e<span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+endpointCreation<span class="o">()</span></code></pre></figure> <h2 id="processo-concluído">Processo concluído</h2> <br /><!-- Load Facebook SDK for JavaScript --> <div id="fb-root"></div> <script> (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0"; fjs.parentNode.insertBefore(js, fjs); })(document, "script", "facebook-jssdk"); </script> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" ></script> <div class="share-page"> <p class="share-text">Share this on &rarr;</p> <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false" style="margin-top:5px;" >Tweet</a > <a class="fb-share-button" data-href="https://ahnix.github.io/2020/12/07/movies/" data-size="large" data-layout="button" >Share</a> </div><!-- Author box --> </div><div class="comments"><!-- Hyvor Comments. For more info visit https://talk.hyvor.com --> <div id="hyvor-talk-view"></div> <script type="text/javascript"> var HYVOR_TALK_WEBSITE = '3912'; var HYVOR_TALK_CONFIG = { url: 'https://ahnix.github.io/2020/12/07/movies/', id: '/2020/12/07/movies', palette: { accent: "#EB8E3F", accentText: "#080808", footerHeader: "#171616", footerHeaderText: "#656363", box: "#3A3A38", boxText: "#E0E0E0", boxLightText: "#AAAAAA", backgroundText: "#E0E0E0" } }; </script> <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed"></script> </div><!-- Incomment incase you want to use Disqus <div id="disqus_thread"></div> --> </article> <script> var disqus_config = function () { this.page.url = "https://ahnix.github.io/2020/12/07/movies/"; /* Replace PAGE_URL with your page's canonical URL variable */ this.page.identifier = "/2020/12/07/movies"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */ }; (function () { /* DON'T EDIT BELOW THIS LINE */ var d = document, s = d.createElement('script'); s.src = 'https://almeidaramon.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })(); </script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a> </noscript></div> </div> <div class="row"> <div class="col-md-4"> <div class="card"> <div class="card-header">About Ramon Almeida</div> <div class="card-body"> <p class="author_bio">Hi, my name is Ramon Almeida. I`m web developer :D</p><!-- Place this tag where you want the github button to render. --> <a class="github-button" href="https://github.com/ahnix" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ahnix/ on GitHub">Star</a> </div> </div> </div> <div class="col-md-4"> <div class="card"> <div class="card-header">Categories</div> <div class="card-body text-dark"> </div> </div> </div> <div class="col-md-4"> <div class="card"> <div class="card-header">Useful Links</div> <div class="card-body text-dark"> <li> <a href="https://ahnix.github.io/">Home</a> </li> <li> <a href="https://ahnix.github.io/about">About</a> </li> <li> <a href="https://ahnix.github.io/blog">Blog</a> </li> <li> <a href="https://ahnix.github.io/contact">Contact</a> </li> </div> </div> </div> </div> </div> <div class="col-lg-12" id="newsletter_footer"><!-- Mailchimp Newletters --> <form action="https://github.us1.list-manage.com/subscribe/post?u=de6cfaf3b6f25b45d7822532f&amp;id=c8a7c7c710"method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate> <div id="mc_embed_signup_scroll_footer"> <label for="mce-EMAIL_footer"> Signup for Weekly Email Newsletters :D</label> <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL_footer" placeholder="email address" required> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--> <div style="position: absolute; left: -5000px;" aria-hidden="true"> <input type="text" name="b_50bab1c85eae24ecfb0f68361_3a2dd721d0" tabindex="-1" value=""> </div><br /> <div class="clear"> <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe_footer" class="btn btn-lg btn-success"> </div> </div> </div><footer> <p> Powered by<a href="https://github.com/ahnix"> devlopr jekyll</a>.Hosted at <a href="https://pages.github.com">Github</a>. Subscribe via <a href=" /feed.xml ">RSS</a> </p> </footer> <script> var options = { classname: 'my-class', id: 'my-id' }; var nanobar = new Nanobar( options ); nanobar.go( 30 ); nanobar.go( 76 ); nanobar.go(100); </script> <div hidden id="snipcart" data-api-key="Y2I1NTAyNWYtMTNkMy00ODg0LWE4NDItNTZhYzUxNzJkZTI5NjM3MDI4NTUzNzYyMjQ4NzU0"></div> <script src="https://cdn.snipcart.com/themes/v3.0.0-beta.3/default/snipcart.js" defer></script> <script src="https://ahnix.github.io/assets/js/mode-switcher.js"></script> <script> if (window.netlifyIdentity) { window.netlifyIdentity.on("init", user => { if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); } }); } </script> </body> </html>

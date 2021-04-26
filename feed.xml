@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ahnix</title>
+    <description>Ahnix is Built For Developers, which is optimized for speed and readability.</description>
+    <link>https://ahnix.github.io/</link>
+    <atom:link href="https://ahnix.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 26 Apr 2021 13:42:21 +0000</pubDate>
+    <lastBuildDate>Mon, 26 Apr 2021 13:42:21 +0000</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
+
+    
+      <item>
+        <title>Webstorm no console</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/webstorm.png&quot; style=&quot;width: 286px; height: 180px;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;instalação&quot;&gt;Instalação&lt;/h2&gt;
+
+&lt;p&gt; O primeiro passo é ter o webstorm instalado e licenciado.
+Em seguida clicar em tools-&amp;gt;create a command line launcher, conforme img abaixo.
+&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/tools-create comandline.png&quot; style=&quot;width: 286px; height: 180px;&quot; /&gt;&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;Automaticamente ele já preeenche com a locate do bin.
+Basta clicar em ok, abrir o terminal e digital -&amp;gt; webstorm .
+&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 29 Mar 2021 15:01:02 +0000</pubDate>
+        <link>https://ahnix.github.io/2021/03/29/webstorm-noconsole/</link>
+        <guid isPermaLink="true">https://ahnix.github.io/2021/03/29/webstorm-noconsole/</guid>
+      </item>
+    
+      <item>
+        <title>Cloudinary nodejs api</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/cloudinary.png&quot; style=&quot;width: 286px; height: 180px;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;instalação&quot;&gt;Instalação&lt;/h2&gt;
+
+&lt;p&gt; O primeiro passo é instalar as dependecias:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-zsh&quot; data-lang=&quot;zsh&quot;&gt;npm &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;express
+npm &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;multer
+npm &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;cloudinary&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt; criar o projeto&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-zsh&quot; data-lang=&quot;zsh&quot;&gt;npm init&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;criar file de nome index.js com o seguinte conteudo&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/Ahnix/2b5c97a3cfbdd0acb9fbcf146aa783b1.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;O seu package.json deve conter o seguinte conteudo&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/Ahnix/f6ca86cae9133bb42475ed22238b150e.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;basta rodar o npm i em seguida node index.js, sua api de upload estara pronta.
+vale ressaltar que no index deve ser preenchido os dados de acesso ao cloudinary.
+&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 29 Mar 2021 15:01:02 +0000</pubDate>
+        <link>https://ahnix.github.io/2021/03/29/cloudinary-nodejsapi/</link>
+        <guid isPermaLink="true">https://ahnix.github.io/2021/03/29/cloudinary-nodejsapi/</guid>
+      </item>
+    
+      <item>
+        <title>Express imdb movies</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/nodejsexpress.png&quot; style=&quot;width: 286px; height: 180px;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;link---repositorio&quot;&gt;link -&amp;gt; repositorio&lt;/h2&gt;
+&lt;p&gt;https://github.com/Ahnix/movies&lt;/p&gt;
+
+&lt;p&gt; comentando o code&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;s1&quot;&gt;'use strict'&lt;/span&gt;
+
+// import lib express e complementares para ser usada
+const express &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; require&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'express'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+const request &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; require&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'request'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+const path &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; require&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'path'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+// onde esta escrito suakey troque obviamente pela key gerada &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;imdb para uso da api
+const tmdbApiKey &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; suakey
+
+
+// pegando o trending top filmes &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;dia
+const optionsTrending &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  method: &lt;span class=&quot;s1&quot;&gt;'GET'&lt;/span&gt;,
+  url: &lt;span class=&quot;s1&quot;&gt;'https://api.themoviedb.org/3/trending/movie/day'&lt;/span&gt;,
+  qs: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    api_key: tmdbApiKey,
+
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+// pegando o top rank de filmes
+const optionsTopRatedRecommended &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  method: &lt;span class=&quot;s1&quot;&gt;'GET'&lt;/span&gt;,
+  url: &lt;span class=&quot;s1&quot;&gt;'https://api.themoviedb.org/3/movie/top_rated'&lt;/span&gt;,
+  qs: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    api_key: tmdbApiKey,
+    region: &lt;span class=&quot;s1&quot;&gt;'gb'&lt;/span&gt;,
+
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+// pegando detalhes &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;filme 
+const optionsMovieDetails &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  method: &lt;span class=&quot;s1&quot;&gt;'GET'&lt;/span&gt;,
+  url: undefined,
+  qs: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    api_key: tmdbApiKey,
+    append_to_response: &lt;span class=&quot;s1&quot;&gt;'videos,credits'&lt;/span&gt;,
+
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+// autocompelte para um campo de pesquisa
+const optionsMovieAutocomplete &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  method: &lt;span class=&quot;s1&quot;&gt;'GET'&lt;/span&gt;,
+  url: &lt;span class=&quot;s1&quot;&gt;'https://api.themoviedb.org/3/search/movie'&lt;/span&gt;,
+  qs: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    api_key: tmdbApiKey,
+    query: undefined,
+
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;parsedResult
+
+tmdbApiKey
+  ?
+  console.log&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'TMDb api key is found'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; :
+  console.log&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'TMDb api key is NOT found among environment variables!'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+async &lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;apiCall&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;options&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  // &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;I.&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; promise to &lt;span class=&quot;k&quot;&gt;return &lt;/span&gt;the parsedResult &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;processing
+  &lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;tmdbRequest&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return &lt;/span&gt;new Promise&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;resolve, reject&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      request&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;options, &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;error, response, body&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        try &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+          resolve&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;JSON.parse&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;body&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; catch &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+          reject&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+  // &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;II.&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  try &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    parsedResult &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; await tmdbRequest&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; catch &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    console.error&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return &lt;/span&gt;parsedResult
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+// subindo api -&amp;gt; localhost:5000
+&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;endpointCreation&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  try &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    const app &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; express&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    const port &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; process.env.PORT &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; 5000
+
+    app.use&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;express.static&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;path.join&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;__dirname, &lt;span class=&quot;s1&quot;&gt;'client/build'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;
+    // required to serve SPA on heroku production without routing problems&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; it will skip only &lt;span class=&quot;s1&quot;&gt;'api'&lt;/span&gt; calls
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;process.env.NODE_ENV &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'production'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      app.get&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;/^&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;?!&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;api&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;.&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$/&lt;/span&gt;, &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;req, res&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        res.sendFile&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;path.join&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;__dirname, &lt;span class=&quot;s1&quot;&gt;'client/build'&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;'index.html'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    // endpoint para top ranked dos filmes
+    app.get&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/api/topRatedRecommended'&lt;/span&gt;, async &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;req, res&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      const topRatedResponse &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; await apiCall&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;optionsTopRatedRecommended&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+      const randomIndex &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Math.floor&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Math.random&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Math.floor&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;20&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+      const topRatedRandomMovie &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; topRatedResponse.results[randomIndex]
+      res.json&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;topRatedRandomMovie&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+      console.log&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;/api/topRatedRecommended endpoint has been called!&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
+
+    // endpoint para detalhe &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;filme
+    app.get&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/api/movieDetails/:tmdbId'&lt;/span&gt;, async &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;req, res&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      const &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; req.params.tmdbId
+      optionsMovieDetails.url &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;https://api.themoviedb.org/3/movie/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+      res.json&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;await apiCall&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;optionsMovieDetails&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+      console.log&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;/api/movieDetails/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; endpoint has been called!&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
+
+    // endpoint autocompletando nome filme
+    app.get&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/api/movieAutocomplete'&lt;/span&gt;, async &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;req, res&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      const query &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; req.query.q
+      optionsMovieAutocomplete.qs.query &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; query
+      res.json&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;await apiCall&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;optionsMovieAutocomplete&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+      console.log&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;/api/movieAutocomplete?q&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; endpoint has been called!&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
+
+    // fazendo api ouvir a porta 5000
+    app.listen&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;port&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+    console.log&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;API is listening on &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; catch &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    console.error&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+endpointCreation&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;processo-concluído&quot;&gt;Processo concluído&lt;/h2&gt;
+</description>
+        <pubDate>Mon, 07 Dec 2020 22:30:02 +0000</pubDate>
+        <link>https://ahnix.github.io/2020/12/07/movies/</link>
+        <guid isPermaLink="true">https://ahnix.github.io/2020/12/07/movies/</guid>
+      </item>
+    
+      <item>
+        <title>Instalando  Jekyll on mac.</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/skell/jekyll.png&quot; style=&quot;width: 286px; height: 180px;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;instalação&quot;&gt;Instalação&lt;/h2&gt;
+
+&lt;p&gt; O primeiro passo é instalar o brew e o ruby&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/usr/bin/ruby &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;ruby&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Adicione o path do ruby a sua shell&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export PATH=&quot;/usr/local/opt/ruby/bin:$PATH&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.zshrc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;instalando o jekyll e bundler&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;gem &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--user-install&lt;/span&gt; bundler jekyll&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;criando seu primeiro site&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;jekyll new myblog&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Rodando o servidor&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;processo-concluído&quot;&gt;Processo concluído&lt;/h2&gt;
+</description>
+        <pubDate>Tue, 01 Dec 2020 11:01:02 +0000</pubDate>
+        <link>https://ahnix.github.io/2020/12/01/jekyll-on-mac/</link>
+        <guid isPermaLink="true">https://ahnix.github.io/2020/12/01/jekyll-on-mac/</guid>
+      </item>
+    
+      <item>
+        <title>Apache PHP</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/apache-php.png&quot; style=&quot;width: 286px; height: 180px;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; Instalando docker e containers do postgresql &quot;psql&quot;. &lt;/p&gt;
+
+&lt;h2 id=&quot;instalando-apache&quot;&gt;Instalando Apache&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; apache&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl start httpd.service&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;httpd.service&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Para testarmos nossa instalação do Apache, abra seu navegador, e acesse: http://localhost/ &lt;/p&gt;
+
+&lt;h2 id=&quot;instalando-php&quot;&gt;Instalando php&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; php php-apache&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt; Vamos editar o arquivo httpd.conf desta forma: &lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vim /etc/httpd/conf/httpd.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Comente esta linha, colocando um # no início da linha, ficando desta forma:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#LoadModule mpm_event_module modules/mod_mpm_event.so&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Descomente esta linha, retirando # no início da linha, ficando desta forma:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
+LoadModule rewrite_module          modules/mod_rewrite.so&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;LoadModule dir_module modules/mod_dir.so&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Logo abaixo desta linha, insira a linha abaixo:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;LoadModule php7_module modules/libphp7.so&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Agora, procure a seção onde temos uma série de Include, e insira no final desta parte a linha abaixo:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Include conf/extra/php7_module.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Salve o arquivo, e reinicie o Apache, para podermos testar se o PHP está funcionando corretamente.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl restart httpd.service&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Tue, 15 Sep 2020 11:01:02 +0000</pubDate>
+        <link>https://ahnix.github.io/2020/09/15/apache-php/</link>
+        <guid isPermaLink="true">https://ahnix.github.io/2020/09/15/apache-php/</guid>
+      </item>
+    
+      <item>
+        <title>Docker Psql</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/dockpsql.png&quot; style=&quot;width: 286px; height: 180px;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; Instalando docker e containers do postgresql &quot;psql&quot;. &lt;/p&gt;
+
+&lt;h2 id=&quot;obtendo-as-imagens-necessárias&quot;&gt;Obtendo as imagens necessárias&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;docker pull dpage/pgadmin4&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;docker pull postgres&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;criando-rede-bridge-para-o-postgres-rodar&quot;&gt;Criando rede bridge para o postgres rodar&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;docker network create &lt;span class=&quot;nt&quot;&gt;--driver&lt;/span&gt; bridge postgres-network&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;obtendo-as-imagens-necessárias-1&quot;&gt;Obtendo as imagens necessárias&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; postgres &lt;span class=&quot;nt&quot;&gt;--network&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;postgres-network &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;POSTGRES_PASSWORD=suasenha&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 5432:5432 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; ~/PostgreSQL:/var/lib/postgresql/data &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; postgres&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; pgadmin &lt;span class=&quot;nt&quot;&gt;--network&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;postgres-network &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 15432:80 &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;PGADMIN_DEFAULT_EMAIL=ramon@gmail.com&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;PGADMIN_DEFAULT_PASSWORD=suasenha&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; dpage/pgadmin4&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;acesso-pgadmin&quot;&gt;Acesso PGADMIN&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;http://localhost:15432&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;acesso-console&quot;&gt;Acesso console&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ifconfig docker0&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Colete o ip e efetue Acesso.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;psql &lt;span class=&quot;nt&quot;&gt;-U&lt;/span&gt; postgres &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ip coletado&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;screenshots&quot;&gt;Screenshots&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/pgadmin.png&quot; alt=&quot;pgadmin&quot; /&gt;
+&lt;img src=&quot;/assets/img/pgadmin1.png&quot; alt=&quot;pgadmin&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 13 Sep 2020 11:01:02 +0000</pubDate>
+        <link>https://ahnix.github.io/2020/09/13/docker-psql/</link>
+        <guid isPermaLink="true">https://ahnix.github.io/2020/09/13/docker-psql/</guid>
+      </item>
+    
+      <item>
+        <title>Instalando Arch</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/skell/arch.jpg&quot; style=&quot;width: 286px; height: 180px;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+&lt;p&gt; Você encontra a ISOs para download do Arch Linux &lt;a href=&quot;https://www.archlinux.org/download/&quot;&gt; Clique Aqui!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; Depois é só usar um pen drive bootável da distro.&lt;/p&gt;
+
+&lt;h2 id=&quot;instalação&quot;&gt;Instalação&lt;/h2&gt;
+
+&lt;p&gt; O primeiro passo é ajustar o seu teclado&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;loadkeys br-abnt2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Toda a instalação do Arch precisa de acesso à internet, por isso é importante que você esteja conectado.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ping 1.1.1.1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Caso você tenha Wi-Fi:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;wifi-menu&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;O próximo passo é conferir as suas partições&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;fdisk &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; /dev/sda&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Defina suas partições conforme seu hd ou seu gosto.&lt;/p&gt;
+&lt;p&gt;No meu caso ficou:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/dev/sda1 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;500MB para o /boot/efi&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+/dev/sda2 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;todo o resto para o /&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;O GRUB no meu caso a /dev/sda1/ type EFI BIOS . O próximo passo é formatá-las:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkfs.fat &lt;span class=&quot;nt&quot;&gt;-F32&lt;/span&gt; /dev/sda1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkfs.ext4 /dev/sda2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;pontos-de-montagem&quot;&gt;Pontos de montagem&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mount /dev/sda2 /mnt&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; /mnt/boot/efi&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;instalação-dos-pacotes-base-do-arch&quot;&gt;Instalação dos pacotes base do Arch&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;pacstrap /mnt base base-devel linux linux-firmware&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;vamos-gerar-a-nossa-tabela-fstab&quot;&gt;Vamos gerar a nossa tabela FSTAB&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;genfstab &lt;span class=&quot;nt&quot;&gt;-U&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; /mnt &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; /mnt/etc/fstab&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;chroot&quot;&gt;Chroot&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;arch-chroot /mnt&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;definindo-horário&quot;&gt;Definindo Horário&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sf&lt;/span&gt; /usr/share/zoneinfo/America/Bahia /etc/localtime&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;definindo-variável-de-linguagem&quot;&gt;Definindo variável de linguagem&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;LANG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pt_BR.UTF-8 &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; /etc/locale.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;definindo-teclado-abnt2&quot;&gt;Definindo teclado abnt2&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;KEYMAP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;br-abnt2 &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; /etc/vconsole.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;definindo-host&quot;&gt;Definindo host&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;arch&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; /etc/hosts&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;127.0.0.1      localhost.localdomain            localhost&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; /etc/hosts&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;senha-root&quot;&gt;senha root&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;passwd&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;criando-user&quot;&gt;criando user&lt;/h2&gt;
+
+&lt;p&gt;Troque o archuser pelo seu nome de usuario&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;useradd &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;users&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-G&lt;/span&gt; wheel archuser&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;instalar-pacotes-uteis&quot;&gt;Instalar pacotes uteis&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; dosfstools os-prober mtools network-manager-applet networkmanager wpa_supplicant wireless_tools dialog &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;dhclient wget vim nano screen  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;sudoers&quot;&gt;Sudoers&lt;/h2&gt;
+&lt;p&gt;Troque o archuser pelo seu nome de usuario&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;archuser &lt;span class=&quot;nv&quot;&gt;ALL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;ALL&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ALL&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;efiboot&quot;&gt;EFIboot&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; grub-efi-x86_64 efibootmgr&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;grub-install &lt;span class=&quot;nt&quot;&gt;--target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;x86_64-efi &lt;span class=&quot;nt&quot;&gt;--efi-directory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/boot/efi &lt;span class=&quot;nt&quot;&gt;--bootloader-id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arch_grub &lt;span class=&quot;nt&quot;&gt;--recheck&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; /usr/share/locale/en@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;grub-mkconfig &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; /boot/grub/grub.cfg&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;instalação-concluida&quot;&gt;Instalação concluida&lt;/h2&gt;
+&lt;p&gt;Agora basta efetuar um crtl+d e reboot&lt;/p&gt;
+</description>
+        <pubDate>Sat, 12 Sep 2020 11:01:02 +0000</pubDate>
+        <link>https://ahnix.github.io/2020/09/12/instalando-arch/</link>
+        <guid isPermaLink="true">https://ahnix.github.io/2020/09/12/instalando-arch/</guid>
+      </item>
+    
+
+    
+      
+        
+      
+    
+      
+    
+      
+        
+          <item>
+            <title></title>
+            <description>&lt;h3&gt;  {{ page.title }} &lt;/h3&gt;
+
+&lt;div id=&quot;categories&quot;&gt;
+{% for category in site.categories %}
+  &lt;div class=&quot;category-box&quot; &gt;
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    &lt;div id=&quot;#{{ category_name | slugize }}&quot;&gt;&lt;/div&gt;
+    &lt;h4 class=&quot;category-head&quot;&gt;&lt;a href=&quot;{{ site.baseurl }}/blog/categories/{{ category_name }}&quot;&gt;{{ category_name }}&lt;/a&gt;&lt;/h4&gt;
+    &lt;a name=&quot;{{ category_name | slugize }}&quot;&gt;&lt;/a&gt;
+     {% for post in site.categories[category_name] %}
+    &lt;article class=&quot;center&quot;&gt;
+      &lt;h6 &gt;&lt;a href=&quot;{{ site.baseurl }}{{ post.url }}&quot;&gt;{{post.title}}&lt;/a&gt;&lt;/h6&gt;
+    &lt;/article&gt;
+
+
+    {% endfor %}
+
+  &lt;/div&gt;
+{% endfor %}
+&lt;/div&gt;
+
+
+</description>
+            <link>https://ahnix.github.io/blog/categories/</link>
+          </item>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <item>
+            <title>Guides</title>
+            <description>&lt;h5&gt; Posts by Category : {{ page.title }} &lt;/h5&gt;
+
+&lt;div class=&quot;card&quot;&gt;
+{% for post in site.categories.guides %}
+ &lt;li class=&quot;category-posts&quot;&gt;&lt;span&gt;{{ post.date | date_to_string }}&lt;/span&gt; &amp;nbsp; &lt;a href=&quot;{{ post.url }}&quot;&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
+{% endfor %}
+&lt;/div&gt;</description>
+            <link>https://ahnix.github.io/blog/categories/guides/</link>
+          </item>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <item>
+            <title>Jekyll</title>
+            <description>&lt;h5&gt; Posts by Category : {{ page.title }} &lt;/h5&gt;
+
+&lt;div class=&quot;card&quot;&gt;
+{% for post in site.categories.jekyll %}
+ &lt;li class=&quot;category-posts&quot;&gt;&lt;span&gt;{{ post.date | date_to_string }}&lt;/span&gt; &amp;nbsp; &lt;a href=&quot;{{ post.url }}&quot;&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
+{% endfor %}
+&lt;/div&gt;</description>
+            <link>https://ahnix.github.io/blog/categories/jekyll/</link>
+          </item>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <item>
+            <title>Guides</title>
+            <description>&lt;h5&gt; Posts by Category : {{ page.title }} &lt;/h5&gt;
+
+&lt;div class=&quot;card&quot;&gt;
+{% for post in site.categories.sample_category %}
+ &lt;li class=&quot;category-posts&quot;&gt;&lt;span&gt;{{ post.date | date_to_string }}&lt;/span&gt; &amp;nbsp; &lt;a href=&quot;{{ post.url }}&quot;&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
+{% endfor %}
+&lt;/div&gt;</description>
+            <link>https://ahnix.github.io/blog/categories/sample_category/</link>
+          </item>
+        
+      
+    
+      
+    
+      
+        
+          <item>
+            <title>Our Sponsors</title>
+            <description>Thanks to all the amazing contributors and our Backers for the support.
+
+- [Dirish Mohan](https://dirishmohan.com)</description>
+            <link>https://ahnix.github.io/sponsors/</link>
+          </item>
+        
+      
+    
+      
+        
+          <item>
+            <title>Styleguide</title>
+            <description>&lt;h1 class=&quot;text-center&quot;&gt; devlopr jekyll - Styleguide &lt;/h1&gt;
+
+&lt;hr /&gt;
+
+ &lt;img src=&quot;/assets/img/styleguide.png&quot; class=&quot;img-fluid&quot;&gt;
+
+&lt;p&gt; Lets try the different text styles  &lt;b&gt; Bold &lt;/b&gt; , &lt;strong&gt; Strong &lt;/strong&gt;, &lt;em&gt; Emphasis &lt;/em&gt;, &lt;i&gt; Italic &lt;/i&gt; &lt;/p&gt;
+
+
+&lt;p&gt; Now, lets try different heading styles : &lt;/p&gt;
+
+&lt;h1&gt; Hello in h1 ! &lt;/h1&gt;
+&lt;h2&gt; Hello in h2 ! &lt;/h2&gt;
+&lt;h3&gt; Hello in h3 ! &lt;/h3&gt;
+&lt;h4&gt; Hello in h4 ! &lt;/h4&gt;
+&lt;h5&gt; Hello in h5 ! &lt;/h5&gt;
+&lt;h6&gt; Hello in h6 ! &lt;/h6&gt;
+
+&lt;hr /&gt;
+&lt;p&gt; Unordered List &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt; List Item 1 &lt;/li&gt;
+&lt;li&gt; List Item 2 &lt;/li&gt;
+&lt;li&gt; List Item 3 &lt;/li&gt;
+&lt;li&gt; List Item 4 &lt;/li&gt;
+&lt;li&gt; List Item 5 &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt; Ordered List &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt; List Item 1 &lt;/li&gt;
+&lt;li&gt; List Item 2 &lt;/li&gt;
+&lt;li&gt; List Item 3 &lt;/li&gt;
+&lt;li&gt; List Item 4 &lt;/li&gt;
+&lt;li&gt; List Item 5 &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This is a Block Quote,  It can Expand Multiple Lines &lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;You can use the mark tag to &lt;mark&gt;highlight&lt;/mark&gt; text. &lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt; This line of text is meant to be deleted text &lt;/del&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;This line of text will render as underlined&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;This line of text is meant to be treated as fine print.&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This line rendered as bold text.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This line rendered as italicized text.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;abbr title=&quot;attribute&quot;&gt;attr&lt;/abbr&gt;&lt;/p&gt;
+&lt;p&gt;&lt;abbr title=&quot;HyperText Markup Language&quot; class=&quot;initialism&quot;&gt;HTML&lt;/abbr&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;div class=&quot;responsive-table&quot;&gt;
+&lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th scope=&quot;col&quot;&gt;#&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;th scope=&quot;row&quot;&gt;1&lt;/th&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;th scope=&quot;row&quot;&gt;2&lt;/th&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;th scope=&quot;row&quot;&gt;3&lt;/th&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3&gt;YouTube Responsive Embed&lt;/h3&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/nuwjUZCSB2Y?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h3&gt;Vimeo Responsive Embed&lt;/h3&gt;
+
+&lt;iframe src=&quot;https://player.vimeo.com/video/212114694?title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;ted-responsive-embed&quot;&gt;TED Responsive Embed&lt;/h3&gt;
+
+&lt;iframe src=&quot;https://embed.ted.com/talks/ted_halstead_a_climate_solution_where_all_sides_can_win&quot; width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;twitch-responsive-embed&quot;&gt;Twitch Responsive Embed&lt;/h3&gt;
+
+&lt;iframe src=&quot;https://player.twitch.tv/?autoplay=false&amp;amp;video=v248755437&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; scrolling=&quot;no&quot; height=&quot;378&quot; width=&quot;620&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;soundcloud-embed&quot;&gt;SoundCloud Embed&lt;/h3&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/29738591&amp;amp;color=ff5500&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;codepen-embed&quot;&gt;CodePen Embed&lt;/h3&gt;
+
+&lt;p data-height=&quot;265&quot; data-theme-id=&quot;light&quot; data-slug-hash=&quot;YWvpRo&quot; data-default-tab=&quot;css,result&quot; data-user=&quot;kharrop&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;Referral Form&quot; class=&quot;codepen&quot;&gt;&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;syntax-highlighting&quot;&gt;Syntax Highlighting&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;s1&quot;&gt;'use strict'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;markdown&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'markdown'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Editor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;preview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;update&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;preview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toHTML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;editor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You can add inline code just like this, E.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;.code { color: #fff; }&lt;/code&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nt&quot;&gt;pre&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#f4f4f4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;github-gist-embed&quot;&gt;GitHub gist Embed&lt;/h3&gt;
+
+&lt;script src=&quot;https://gist.github.com/ahmadajmi/dbb4f713317721668bcbc39420562afc.js&quot;&gt;&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;input-style&quot;&gt;Input Style&lt;/h3&gt;
+
+&lt;p&gt;&lt;input type=&quot;text&quot; placeholder=&quot;I'm an input field!&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3&gt; Twitter Embed &lt;/h3&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;I just published “Deploying a blog using Jekyll and Github Pages with SSL certificate for Free” &lt;a href=&quot;https://t.co/B3T3IQVU93&quot;&gt;https://t.co/B3T3IQVU93&lt;/a&gt;&lt;/p&gt;&amp;mdash; Sujay Kundu (@SujayKundu777) &lt;a href=&quot;https://twitter.com/SujayKundu777/status/1012601950469160962?ref_src=twsrc%5Etfw&quot;&gt;June 29, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;h3&gt; Instagram Embed &lt;/h3&gt;
+
+&lt;blockquote class=&quot;instagram-media&quot; data-instgrm-permalink=&quot;https://www.instagram.com/p/BhFTg6uhNRi/&quot; data-instgrm-version=&quot;9&quot; style=&quot; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&quot;&gt;&lt;div style=&quot;padding:8px;&quot;&gt; &lt;div style=&quot; background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;&quot;&gt; &lt;div style=&quot; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;p style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&quot;&gt;&lt;a href=&quot;https://www.instagram.com/p/BhFTg6uhNRi/&quot; style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;&quot; target=&quot;_blank&quot;&gt;A post shared by Ahmad Ajmi (@ahmadajme)&lt;/a&gt; on &lt;time style=&quot; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&quot; datetime=&quot;2018-04-02T21:18:58+00:00&quot;&gt;Apr 2, 2018 at 2:18pm PDT&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt; &lt;script async defer src=&quot;//www.instagram.com/embed.js&quot;&gt;&lt;/script&gt;
+
+</description>
+            <link>https://ahnix.github.io/styleguide/</link>
+          </item>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+
+  </channel>
+</rss>
